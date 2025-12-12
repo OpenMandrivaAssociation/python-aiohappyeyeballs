@@ -2,7 +2,7 @@
 
 Name:		python-aiohappyeyeballs
 Version:	2.6.1
-Release:	1
+Release:	2
 Summary:	Happy Eyeballs for asyncio
 URL:		https://pypi.org/project/aiohappyeyeballs/
 License:	PSF-2.0
