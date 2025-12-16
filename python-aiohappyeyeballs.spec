@@ -28,6 +28,7 @@ export CI=true
 export PYTHONPATH="%{buildroot}%{python_sitearch}:${PWD}"
 # disable coverage tests
 sed -i -e 's/addopts = "-v -Wdefault --cov=aiohappyeyeballs --cov-report=term-missing:skip-covered"/addopts = "-v -Wdefault"/g' pyproject.toml
+rm -rf tests/conftest.py
 # run pytest
 pytest -v
 
