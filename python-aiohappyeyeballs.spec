@@ -18,13 +18,18 @@ BuildRequires:	python%{pyver}dist(cython)
 BuildRequires:	python%{pyver}dist(poetry-core)
 BuildRequires:	python%{pyver}dist(pytest)
 BuildRequires:	python%{pyver}dist(pytest-asyncio)
-BuildRequires:	python%{pyver}dist(pytest-cov)
+#BuildRequires:	python%%{pyver}dist(pytest-cov)
 
 %description
 Happy Eyeballs for asyncio
 
 %check
-pytest -v tests/
+export CI=true
+export PYTHONPATH="%{buildroot}%{python_sitearch}:${PWD}"
+# disable coverage tests
+sed -i -e 's/addopts = "-v -Wdefault --cov=aiohappyeyeballs --cov-report=term-missing:skip-covered"/addopts = "-v -Wdefault"/g' pyproject.toml
+# run pytest
+pytest -v
 
 %files
 %{python_sitelib}/%{module}/
