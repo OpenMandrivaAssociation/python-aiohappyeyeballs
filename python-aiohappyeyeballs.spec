@@ -2,7 +2,7 @@
 %bcond tests 1
 
 Name:		python-aiohappyeyeballs
-Version:	2.7.0
+Version:	2.7.1
 Release:	1
 Summary:	Happy Eyeballs for asyncio
 License:	PSF-2.0
